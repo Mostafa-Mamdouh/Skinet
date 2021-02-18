@@ -45,7 +45,7 @@ namespace Skinet
             app.UseHttpsRedirection();
             app.UseRouting();
             app.UseStaticFiles();
-            app.UseCors("Cors Policy");
+            app.UseCors("CorsPolicy");
             app.UseAuthorization();
             app.UseSwaggerDocumentation();
             app.UseEndpoints(endpoints =>
