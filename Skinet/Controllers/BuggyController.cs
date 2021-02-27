@@ -1,4 +1,5 @@
 ﻿using Infrastructure.Data;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Skinet.Errors;
@@ -45,6 +46,13 @@ namespace Skinet.Controllers
         public ActionResult GetNoFoundRequest(int id)
         {
             return Ok();
+        }
+
+        [HttpGet("testauth")]
+        [Authorize]
+        public ActionResult<string> GetSecretText()
+        {
+            return "Secret Stuff" ;
         }
     }
 }
